@@ -14,5 +14,5 @@ runs:
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git diff ${{ inputs.branch }}
+      run: git br
 
