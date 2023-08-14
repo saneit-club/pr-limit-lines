@@ -14,5 +14,5 @@ runs:
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git diff --name-only origin/${{ inputs.branch }} ${GITHUB_HEAD_REF}
+      run: git diff --name-only ${{ inputs.branch }}
 
