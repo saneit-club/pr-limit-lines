@@ -1,0 +1,14 @@
+Name: 'Sane PR Line Limiter'
+description: 'Warn about large pull requests'
+
+inputs:
+  lines:
+    description: warn if pull request has more than this number of lines
+    default: 50
+
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Counting lines in diff"
+    - shell: git diff --name-only origin/main origin/${GITHUB_HEAD_REF}
+
