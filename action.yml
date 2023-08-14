@@ -5,11 +5,14 @@ inputs:
   lines:
     description: warn if pull request has more than this number of lines
     default: 50
+  branch:
+    description: main or master
+    default: main
 
 runs:
   using: 'composite'
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git diff --name-only origin/main origin/${GITHUB_HEAD_REF}
+      run: git diff --name-only origin/${{ inputs.branch }} origin/${GITHUB_HEAD_REF}
 
