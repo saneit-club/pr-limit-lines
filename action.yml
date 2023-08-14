@@ -14,5 +14,4 @@ runs:
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git clone https://${{ github.token }}@github.com/${{ github.repository }} . && git diff $GITHUB_SHA
       run: curl -H "Accept: application/vnd.github.v3.diff" https://${{ github.token }}:x-oauth-basic@api.github.com/repos/${{ github.repository}}/pulls/1
