@@ -14,5 +14,5 @@ runs:
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git branch
+      run:i git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
 
