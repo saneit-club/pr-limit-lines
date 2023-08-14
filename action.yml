@@ -14,5 +14,5 @@ runs:
   steps:
     - name: Counting lines in diff
       shell: bash
-      run: git diff https://${{ github.token }}@github.com:${{ github.repository }}/$GITHUB_BASE_REF $GITHUB_SHA
+      run: git clone https://${{ github.token }}@github.com:${{ github.repository }}/$GITHUB_BASE_REF . && git diff $GITHUB_SHA
 
